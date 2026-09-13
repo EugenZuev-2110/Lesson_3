@@ -27,3 +27,15 @@ class Round {
     	return radius; 
     }
 }
+
+class RoundAdapter extends Square {
+    private Round roundPeg;
+
+    public RoundAdapter(Round roundPeg) {
+        this.roundPeg = roundPeg;
+    }
+    
+    public double getSide() {
+        return roundPeg.getRadius() * 2;
+    }
+}
