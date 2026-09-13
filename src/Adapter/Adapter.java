@@ -51,3 +51,12 @@ class SquareHole {
         return this.side >= square.getSide();
     }
 }
+
+public class Adapter {
+    public static void main(String[] args) {
+        Round round = new Round(5);
+        SquareHole hole = new SquareHole(5);
+        Square adapter = new RoundAdapter(round);
+        System.out.println("Находится ли round внутри hole? " + hole.fits(adapter));
+    }
+}
