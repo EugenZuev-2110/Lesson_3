@@ -29,13 +29,25 @@ class Round {
 }
 
 class RoundAdapter extends Square {
-    private Round roundPeg;
+    private Round round;
 
-    public RoundAdapter(Round roundPeg) {
-        this.roundPeg = roundPeg;
+    public RoundAdapter(Round round) {
+        this.round = round;
     }
     
     public double getSide() {
-        return roundPeg.getRadius() * 2;
+        return round.getRadius() * 2;
+    }
+}
+
+class SquareHole {
+    private double side;
+    
+    public SquareHole(double side) {
+    	this.side = side; 
+    }
+
+    public boolean fits(Square square) {
+        return this.side >= square.getSide();
     }
 }
